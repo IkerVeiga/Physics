@@ -23,9 +23,25 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        if(Input.GetKey(KeyCode.W))
+        {
+            this.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            this.transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            this.transform.Translate(Vector3.back * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            this.transform.Translate(Vector3.right * Time.deltaTime * speed);
+        }
+        //horizontal = Input.GetAxis("Horizontal");
+        //vertical = Input.GetAxis("Vertical");
 
-        this.transform.Translate(new Vector3 (horizontal * Time.deltaTime * speed, 0.0f, vertical * Time.deltaTime * speed));
+
     }
 }
