@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class Shoot : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Shoot : MonoBehaviour
             
             GameObject bulletInstance = Instantiate(bullet, cannon.transform.position, Quaternion.Euler(0, 0, 0));
             bulletInstance.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, 1f * force));
+            
         }
     }
 
